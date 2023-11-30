@@ -14,16 +14,16 @@ for(let i = 0; i<100; i++) {
 
 
 
-const SQUARE_NUMBER = 12;
+const SQUARE_NUMBER = 625;
 
 for (let i = 0; i < SQUARE_NUMBER; i++) {
   const square = document.createElement('div')
   square.classList.add('square')
 
-  squares.addEventListener("mouseover", () => setColor(squares))
-  squares.addEventListener("mouseleave", () => removeColor(squares))
+  square.addEventListener("mouseover", () => setColor(square))
+  square.addEventListener("mouseleave", () => removeColor(square))
 
-  board.append(square)
+  board.append(square);
 }
 function setColor(element) {
   const color = getRndmColor();
@@ -43,20 +43,19 @@ function getRndmColor() {
 
     const resetAllSquaresBtn = document.getElementById("resetAllSquares");
     resetAllSquaresBtn.addEventListener("click", () => {
+        const squares = document.querySelectorAll('.square');
         squares.forEach((square) => {
-            square.style.backgroundColor = "white";
+            square.style.backgroundColor = "#1b1b1b";
         });
     });
 
-    const fillAllSquaresBtn = document.getElementById("fillAllDivs");
+    const fillAllSquaresBtn = document.getElementById("fillAllSquares");
     fillAllSquaresBtn.addEventListener("click", () => {
         const currentColor = colorPicker.value; 
         squares.forEach((square) => {
             square.style.backgroundColor = currentColor;
         });
     });
-
-
 // document.addEventListener("DOMContentLoaded", () => {
 //     const paletteColors = document.querySelectorAll("#palette .color");
 //     const currentColorElement = document.getElementById("current-color");
