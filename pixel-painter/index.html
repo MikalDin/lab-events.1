@@ -1,13 +1,87 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pixel Painter</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<input type="color" id="color-picker" value="#000000">
+	<div class="container" id="board"></div>
+
+  <button id="resetAllSquares">Reset All Squares</button>
+  <button id="fillAllSquares">Fill All Squares</button>
+  <!-- <footer>
+    <nav>
+      <a href="../index.html">HOME</a>
+      <a href="../tic-tac-toe/index.html">Tic Tac Toe</a>
+    </nav>
+  </footer> -->
+
+	<script>
+		const board = document.querySelector('#board');
+    const colorPicker = document.getElementById('color-picker');
+
+    const SQUARE_NUMBER = 405;
+
+    for (let i = 0; i < SQUARE_NUMBER; i++) {
+      const square = document.createElement('div');
+      square.classList.add('square');
+
+      square.addEventListener('click', () => setColor(square));
+
+      board.append(squares);
+    }
+
+    function setColor(element) {
+      const color = colorPicker.value;
+      element.style.backgroundColor = color;
+    }
+	</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
   <head>
+    <style>
+      :root {
+         --size: 10;
+      }
+    </style> 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixel Painter🎨</title>
     <link rel="stylesheet" href="styles.css" />
     <script defer src="main.js"></script>
-    <!-- <main id="canvas" style="background-color: white;"></main> -->
+    <main id="canvas" style="background-color: white;"></main>
   </head>
   <body>
    
@@ -28,6 +102,8 @@
         <div class="color" style="background: white"></div>
       </section>
     </div>
+    <button id="resetAllCells">Reset All Cells</button>
+    <button id="fillAllCells">Fill All Cells</button>
     <footer>
       <nav>
         <a href="../index.html">HOME</a>
@@ -35,4 +111,4 @@
       </nav>
     </footer>
   </body>
-</html>
+</html> -->
