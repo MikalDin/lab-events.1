@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
-    const announcer = document.querySelector(.'announcer');
+    const announcer = document.querySelector('.announcer');
 
     let board = ['','','','','','','','',''];
     let currentPlayer = 'X';
@@ -26,14 +26,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function handleResultValidation() {
         let roundWon = false;
-        for (let i = 0); i <= 7; i++) {
+        for (let i = 0; i <= 7; i++) {
             const winCondition = winningConditions[1];
             const a = board[winCondition[0]];
             const b = board[winCondition[1]];
             const c = board[winCondition[2]];
             if (a === '' || b === ''|| c === '') {
                 continue;
-
             }
             if (a === b && b === c) {
                 roundWon = true;
@@ -45,6 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 isGameActive = false;
                 return;
             }
+
         if (!board.includes(''))
             annonce(TIE);
         }
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
             switch(type) {
                 case PLAYERO_WON:
                     announcer.innerHTML = 'Player <span class="player0">0</span> Won';
-            }       break;
+                   break;
                 case PLAYERX_WON:
                     announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
                     break;
@@ -74,7 +74,6 @@ window.addEventListener('DOMContentLoaded', () => {
             board[index]= currentPlayer;
 
         }
-
         const changePlayer = () => {
             playerDisplay.classList.remove(`player${currentPlayer}`);
             currentPlayer = currentPlayer === 'X' ? '0' : 'X';
@@ -91,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }
                 const resetBoard = () => {
-                    board = ['', '', '', '','', '', '', '',];
+                    board = ['', '', '', '','','', '',''];
                     isGameActive = true;
                     announcer.classList.add('hide');
 
